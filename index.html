@@ -67,15 +67,16 @@
 							var json = JSON.stringify(json);
 
 							var name_index = json.indexOf(city);
-							console.log(name_index);
-							var end_index = city.length;
-							console.log(end_index);
-							var end = end_index + name_index;
-							console.log(end);
+							var end = city.length + name_index;
 							var name = json.substring(name_index, end)
-							console.log(name);
 
 							$("#loc").text(name);
+
+							var temp_index = json.indexOf('temp') + 6;
+							var end_index = temp_index + 4;
+							var temp = json.substring(temp_index, end_index);
+
+							$('#temp').text(temp);
 	    		})
 
 
