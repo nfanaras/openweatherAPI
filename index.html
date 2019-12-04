@@ -10,7 +10,7 @@
 		padding: 5px;
 	}
 	#forecast{
-		/*This div should not appear until the weather is returned.*/
+		display: none;
 	}
 	#forecast div{
 		width: 25vw;
@@ -88,6 +88,8 @@
 			$.ajax({
 				url:query,
 				success: function(results){
+
+					$('#forecast').css("display", "block");
 					console.log('in ajax');
 					if ('name' in results){
 						console.log('in name');
