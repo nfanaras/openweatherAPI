@@ -64,37 +64,42 @@
 
 	        $.getJSON(query,function(json){
 	            console.log(JSON.stringify(json));
-	    })
+							var json = JSON.stringify(json);
 
-			$.ajax({
-				query:query,
-				success: function(results){
+	    		})
 
-					if ('name' in results){
-
-						$("#loc").text(results.name);
+					if ('name' in json){
+						console.log('yes');
 					}
-					if ('temp' in results){
-						$("#temp").text(results.temp);
-					}
-
-					if ('temp_min' in results){
-						 $("#low").text(results.temp_min);
-					}
-
-					if ('temp_max' in results){
-						$("#high").text(results.temp_max);
-					}
-
-					if ('icon' in results){
-
-						$("#tempImg").attr("src", results.icon)
-
-					}
-
-
-				}
-			})
+			// $.ajax({
+			// 	query:query,
+			// 	success: function(results){
+			//
+			// 		if ('name' in results){
+			//
+			// 			$("#loc").text(results.name);
+			// 		}
+			// 		if ('temp' in results){
+			// 			$("#temp").text(results.temp);
+			// 		}
+			//
+			// 		if ('temp_min' in results){
+			// 			 $("#low").text(results.temp_min);
+			// 		}
+			//
+			// 		if ('temp_max' in results){
+			// 			$("#high").text(results.temp_max);
+			// 		}
+			//
+			// 		if ('icon' in results){
+			//
+			// 			$("#tempImg").attr("src", results.icon)
+			//
+			// 		}
+			//
+			//
+			// 	}
+			// })
 
     }
     </script>
