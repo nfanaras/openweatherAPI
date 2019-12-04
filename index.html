@@ -114,12 +114,22 @@
 
 					}
 
+					if ('weather' in results){
+						var weather = results.weather;
 
-					if ('icon' in results){
-						console.log('in icon');
-						$("#tempImg").attr("src", results.icon)
+						if ('icon' in weather){
+							var icon = weather.icon;
 
+
+							$("#tempImg").attr('src', "https://openweathermap.org/img/wn/" + icon + "@2x.png");
+						}
 					}
+
+					// if ('icon' in results){
+					// 	console.log('in icon');
+					// 	$("#tempImg").attr("src", results.icon)
+					//
+					// }
 
 
 				}
