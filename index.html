@@ -73,10 +73,15 @@
 							$("#loc").text(name);
 
 							var temp_index = json.indexOf('temp') + 6;
-							var end_index = temp_index + 5;
-							var temp = json.substring(temp_index, end_index);
+							var end_temp = temp_index + 5;
+							var temp = json.substring(temp_index, end_temp);
 
 							$('#temp').text(temp);
+
+							var high_index = json.indexOf('temp_max') + 10;
+							var high = json.substring(high_index, json.indexOf('}'));
+
+							$('#high').text(high);
 	    		})
 
 
