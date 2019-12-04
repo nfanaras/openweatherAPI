@@ -66,7 +66,7 @@
 	            console.log(JSON.stringify(json));
 							var json = JSON.stringify(json);
 
-							var name_index = json.index(city);
+							var name_index = json.indexOf(city);
 							var end_index = city.length;
 							var end = end_index - name_index;
 							var name = json.substring(name_index, name_index + end)
