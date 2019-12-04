@@ -93,20 +93,27 @@
 						console.log('in name');
 						$("#loc").text(results.name);
 					}
-					if ('temp' in results){
-						$("#temp").text(results.temp);
-						console.log("in temp");
+					if ('main' in results){
+
+						var main = results.main;
+
+						if ('temp' in main){
+							$("#temp").text(main.temp);
+							console.log("in temp");
+						}
+
+						if ('temp_min' in main){
+							 $("#low").text(main.temp_min);
+							 console.log('in min');
+						}
+
+						if ('temp_max' in main){
+							$("#high").text(main.temp_max);
+							console.log('in max');
+						}
+
 					}
 
-					if ('temp_min' in results){
-						 $("#low").text(results.temp_min);
-						 console.log('in min');
-					}
-
-					if ('temp_max' in results){
-						$("#high").text(results.temp_max);
-						console.log('in max');
-					}
 
 					if ('icon' in results){
 						console.log('in icon');
