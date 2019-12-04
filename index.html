@@ -66,11 +66,12 @@
 	            console.log(JSON.stringify(json));
 							var json = JSON.stringify(json);
 
+							if ('name' in json){
+								console.log('yes');
+							}
 	    		})
 
-					if ('name' in json){
-						console.log('yes');
-					}
+
 			// $.ajax({
 			// 	query:query,
 			// 	success: function(results){
