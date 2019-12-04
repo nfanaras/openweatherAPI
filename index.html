@@ -64,56 +64,56 @@
 
 	        $.getJSON(query,function(json){
 	            console.log(JSON.stringify(json));
-							var json = JSON.stringify(json);
-
-							var name_index = json.indexOf(city);
-							var end = city.length + name_index;
-							var name = json.substring(name_index, end)
-
-							$("#loc").text(name);
-
-							var temp_index = json.indexOf('temp') + 6;
-							var end_temp = temp_index + 5;
-							var temp = json.substring(temp_index, end_temp);
-
-							$('#temp').text(temp);
-
-							var high_index = json.indexOf('temp_max') + 10;
-							var high = json.substring(high_index, json.indexOf('}'));
-
-							$('#high').text(high);
+							// var json = JSON.stringify(json);
+							//
+							// var name_index = json.indexOf(city);
+							// var end = city.length + name_index;
+							// var name = json.substring(name_index, end)
+							//
+							// $("#loc").text(name);
+							//
+							// var temp_index = json.indexOf('temp') + 6;
+							// var end_temp = temp_index + 5;
+							// var temp = json.substring(temp_index, end_temp);
+							//
+							// $('#temp').text(temp);
+							//
+							// var high_index = json.indexOf('temp_max') + 10;
+							// var high = json.substring(high_index,;
+							//
+							// $('#high').text(high);
 	    		})
 
 
-			// $.ajax({
-			// 	query:query,
-			// 	success: function(results){
-			//
-			// 		if ('name' in results){
-			//
-			// 			$("#loc").text(results.name);
-			// 		}
-			// 		if ('temp' in results){
-			// 			$("#temp").text(results.temp);
-			// 		}
-			//
-			// 		if ('temp_min' in results){
-			// 			 $("#low").text(results.temp_min);
-			// 		}
-			//
-			// 		if ('temp_max' in results){
-			// 			$("#high").text(results.temp_max);
-			// 		}
-			//
-			// 		if ('icon' in results){
-			//
-			// 			$("#tempImg").attr("src", results.icon)
-			//
-			// 		}
-			//
-			//
-			// 	}
-			// })
+			$.ajax({
+				url:query,
+				success: function(results){
+
+					if ('name' in results){
+
+						$("#loc").text(results.name);
+					}
+					if ('temp' in results){
+						$("#temp").text(results.temp);
+					}
+
+					if ('temp_min' in results){
+						 $("#low").text(results.temp_min);
+					}
+
+					if ('temp_max' in results){
+						$("#high").text(results.temp_max);
+					}
+
+					if ('icon' in results){
+
+						$("#tempImg").attr("src", results.icon)
+
+					}
+
+
+				}
+			})
 
     }
     </script>
