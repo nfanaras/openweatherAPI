@@ -88,25 +88,28 @@
 			$.ajax({
 				url:query,
 				success: function(results){
-
+					console.log('in ajax');
 					if ('name' in results){
-
+						console.log('in name');
 						$("#loc").text(results.name);
 					}
 					if ('temp' in results){
 						$("#temp").text(results.temp);
+						console.log("in temp");
 					}
 
 					if ('temp_min' in results){
 						 $("#low").text(results.temp_min);
+						 console.log('in min');
 					}
 
 					if ('temp_max' in results){
 						$("#high").text(results.temp_max);
+						console.log('in max');
 					}
 
 					if ('icon' in results){
-
+						console.log('in icon');
 						$("#tempImg").attr("src", results.icon)
 
 					}
