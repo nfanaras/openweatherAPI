@@ -115,8 +115,9 @@
 					}
 
 					if ('weather' in results){
+						console.log("in weather");
 						var weather = results.weather;
-
+						weather = weather[0];
 						if ('icon' in weather){
 							var icon = weather.icon;
 
